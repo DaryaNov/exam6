@@ -92,7 +92,7 @@ def book_update_view(request,pk):
             book.email = form.cleaned_data['email']
             book.text = form.cleaned_data['text']
             book.save()
-            return redirect('index',pk=book.pk)
+            return redirect('book_view',pk=book.pk)
         else:
             return render(request, 'book_update.html', context={
                 'book': book,
