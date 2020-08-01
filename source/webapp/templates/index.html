@@ -1,22 +1,15 @@
-{% load staticfiles %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tasks</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="container">
-    <h1>My First TASKS!</h1>
-    {% for book in books %}
-        <h4>{{ book.name_author }}. {{ book.email }}</h4>
-        <div>{{ book.text }}</div>
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block content %}
+    <h1>My list book!</h1>
+    {% for b in book %}
+        <div class="linegr">
+        <h4>{{ b.name_author }} ({{ b.email }})</h4>
+        <p>{{ b.text }}</p>
+         <a href="{% url 'book_update' b.pk %}"> Update </a> /
+        <a href="{% url 'book_delete' b.pk %}"> Delete </a>
+        </div>
     {% endfor %}
-    <p><a href="/books/add/">Добавить Задачу</a></p>
-</div>
-</body>
-</html>
+{% endblock %}

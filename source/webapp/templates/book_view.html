@@ -1,16 +1,13 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View</title>
-</head>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<body>
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
     <h1>Book:</h1>
     <h2>{{ book.name_author }}</h2>
-    <p>Status:{{ book.email }}</p>
+     <p>{{ book.email }}</p>
+    <p>{{ book.text }}</p>
+    <p>Status:{{ book.status }}</p>
     <p>Date: {{ book.created_at }}</p>
     <p><a href="/">На главную</a></p>
-</body>
-</html>
+{% endblock %}

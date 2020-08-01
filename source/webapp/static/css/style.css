@@ -2,35 +2,34 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #444444;
-    /* отступ, чтобы компенсировать высоту навбара */
     margin-top: 60px;
 }
 
 .container {
     margin: 0 auto;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 .navbar {
     display: block;
-    background: #6a7dff;
+    background: #e989ee;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     font-size: 0;
     box-sizing: border-box;
-    padding: 7px 30px;
+    padding: 8px 20px;
 }
 
 .menu {
-    font-size: 14px;
+    font-size: 19px;
     line-height: 1;
     padding: 0;
     margin: 0;
     display: inline-block;
-    color: #fffee8;
+    color: #d6f5c6;
 }
 
 .menu li {
@@ -41,7 +40,7 @@ body {
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    padding: 5px 15px;
+    padding: 10px 15px;
 }
 
 .menu a:hover {
@@ -58,3 +57,11 @@ body {
     color: red;
     margin-top: 2px;
 }
+
+
+.linegr{
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+

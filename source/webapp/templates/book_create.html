@@ -1,37 +1,24 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create</title>
-</head>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<body>
-<h1>Create task</h1>
+{% extends 'base.html' %}
 
-<form action="/books/add/" method="post">
-    {% csrf_token %}
+{% block title %}Create{% endblock %}
 
-    <label>Name:</label><br/>
-    <input type="text" name="name_author"/><br/>
+{% block content %}
+    <h1>Create Article</h1>
 
-    <label>Email:</label><br/>
-    <input type="text" name="email"/><br/>
-
-    <label>Text :</label><br/>
-    <input type="text" name="text"/><br/>
-
-    <label for="id-status">Status:</label><br/>
-    <select name="status" id="id-status">
-        {% for value, label in status_choices %}
-            <option value="{{ value }}">{{ label }}</option>
-        {% endfor %}
-    </select><br/>
-
-    <br/>
-    <input type="submit" value="Send"/>
-</form>
-<br>
-<a href="/">На главную</a>
-</body>
-</html>
+    {% url "book_create" as action_url %}
+    {% include 'partial/form.html' with action_url=action_url form_method='post' %}
+{#<form>#}
+{#      {% for field in form %}#}
+{#            {% include 'partial/form_field.html' %}#}
+{#       {% endfor %}#}
+{##}
+{#        {{ form.as_p }}#}
+{#       {{ form.as_table }}#}
+{#       {{ form.as_ul }}#}
+{##}
+{#        {% include 'partial/form_field.html' with field=form.name_author %}#}
+{#       {% include 'partial/form_field.html' with field=form.email %}#}
+{#       {% include 'partial/form_field.html' with field=form.text %}#}
+{#        {% include 'partial/form_field.html' with field=form.status %}#}
+{#    </form>#}
+{% endblock %}
