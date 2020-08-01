@@ -1,0 +1,10 @@
+venv
+*.sqlite3
+.idea
+*.pyc
+__pycache__
+virtualenv
+.vscode
+*.log
+uploads
+settings_local.py
