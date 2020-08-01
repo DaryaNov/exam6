@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<body>
+<h1>Create task</h1>
+
+<form action="/books/add/" method="post">
+    {% csrf_token %}
+
+    <label>Name:</label><br/>
+    <input type="text" name="name_author"/><br/>
+
+    <label>Email:</label><br/>
+    <input type="text" name="email"/><br/>
+
+    <label>Text :</label><br/>
+    <input type="text" name="text"/><br/>
+
+    <label for="id-status">Status:</label><br/>
+    <select name="status" id="id-status">
+        {% for value, label in status_choices %}
+            <option value="{{ value }}">{{ label }}</option>
+        {% endfor %}
+    </select><br/>
+
+    <br/>
+    <input type="submit" value="Send"/>
+</form>
+<br>
+<a href="/">На главную</a>
+</body>
+</html>
