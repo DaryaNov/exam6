@@ -7,7 +7,7 @@ STATUS_CHOICES = [
 ]
 
 
-class Article(models.Model):
+class Book(models.Model):
     name_author = models.CharField(max_length=100, null=False, blank=False, verbose_name='Имя автора')
     email = models.EmailField(max_length=100, null=False, blank=False, verbose_name='Почта')
     text = models.TextField(max_length=3000, null=False, blank=False, verbose_name='Текст')
